@@ -1,0 +1,3 @@
+#ToDo: OCR reading from scanned channels, matching across all boxes and matching within range, if +-8 of range a transponder is missing, tunning to services from each transponder
+#ToDo: Tune to different Polarization channels and check video playing
+#Done: Image capture and comparing screens, Unified flow

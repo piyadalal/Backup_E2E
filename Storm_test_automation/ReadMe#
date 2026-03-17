@@ -1,0 +1,10 @@
+DLLs = \\10.158.2.160\tamuc\Downloads\Software\Stormtest-PythonWheelFiles
+tamuc / tamuc
+
+located on office network
+
+Automation Code: http://vdc-vm-0005556.pfad.biz/websvn/listing.php?repname=RouterInterops
+Install the package for stormTestAPI using wheel files
+Then these packages are available under site packages and as well as DLLs
+
+add the sitepackage to system path of pycharm, using sys.path.append or under interpreter show path
