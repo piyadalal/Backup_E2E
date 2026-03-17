@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{ page_title }}</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'dropdown.css' %}">
+</head>
+<body>
+<ul id="drop-nav">
+<li>
+<a href="{% url 'menu' %}?action=home">Home</a>
+</li>
+<li>
+<a href="{% url 'menu' %}?action=admin">Admin</a>
+</li>
+<li>
+<a target='_blank' title="PW: admin/password" href="http://{{ webserver_ip }}:8060/">Asus RT-N56U</a>
+</li>
+<li>
+<a target='_blank' href="http://s-m-s3lidb02.pfad.biz/dokuwiki/doku.php?id=router_interops:router_interops">Wiki</a>
+</li>
+<li>
+<a href="{% url 'menu' %}?action=pdu01">PDU-01</a>
+</li>
+<li>
+<a href="{% url 'menu' %}?action=pdu02">PDU-02</a>
+</li>
+</ul>
+
+    <div class="pageTitle">
+<span>
+<big>{{ page_title }}</big>
+</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Site</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    <script src="{% static 'jsUtils.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static 'progressBar.css' %}" type="text/css">
+    <script src="{% static 'progressBar.js' %}" type="text/javascript"></script>
+    <script>
+        function runProgressBar() {
+            toggle_visibility("div_progressBar");
+            moveProgressBar();
+        }
+
+        function submitForm2(action, submitValue) {
+            runProgressBar();
+            submitForm(action, submitValue);
+        }
+
+        function openLog(f) {
+            window.open(f);
+        }
+    </script>
+</head>
+<body>
+    <form id="myForm" method="post">
+        {% csrf_token %}
+        <input id="hiddenName" type="hidden" name="hiddenName" value="hiddenName">
+        <input id="hiddenAction" type="hidden" name="hiddenAction" value="hiddenAction">
+
+        <span id="div_progressBar" style="display: none;">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+        </span>
+
+        {{ menu|safe }}  <!-- This will render the menu items -->
+
+        <div>
+            <h3>Restore History</h3>
+            <table>
+                <tr>
+                    <th>Device Name</th>
+                    <th>Device Type</th>
+                    <th>Filename</th>
+                    <th>Result</th>
+                    <th>Restore Time</th>
+                </tr>
+                {% for entry in restore_history %}
+                    <tr>
+                        <td>{{ entry.device.name }}</td>
+                        <td>{{ entry.device.device_types.name }}</td>
+                        <td>{{ entry.filename }}</td>
+                        <td>{{ entry.result }}</td>
+                        <td>{{ entry.restore_time }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </form>
+</body>
+</html>
