@@ -1,0 +1,9 @@
+python -m pip install google-auth google-cloud google-cloud-logging
+python -m pip install requests
+pip install urllib3
+pip uninstall urllib3
+pip install urllib3==1.26.6
+pip install conversionutil
+pip install timingsutil
+
+pip install tableutil
